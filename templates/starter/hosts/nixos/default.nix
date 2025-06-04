@@ -224,16 +224,16 @@ let user = "%USER%";
     tumbler.enable = true; # Thumbnail support for images
 
     # Emacs runs as a daemon
-    emacs = {
-      enable = true;
-      package = pkgs.emacs-unstable;
-    };
+    #emacs = {
+     # enable = true;
+     # package = pkgs.emacs-unstable;
+    #};
   };
 
   # When emacs builds from no cache, it exceeds the 90s timeout default
-  systemd.user.services.emacs = {
-    serviceConfig.TimeoutStartSec = "7min";
-  };
+  #systemd.user.services.emacs = {
+   # serviceConfig.TimeoutStartSec = "7min";
+  #};
 
   # Enable sound
   # sound.enable = true;
