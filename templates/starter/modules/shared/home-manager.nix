@@ -36,13 +36,13 @@ let name = "%NAME%";
       export HISTIGNORE="pwd:ls:cd"
 
       # Emacs is my editor
-      export ALTERNATE_EDITOR=""
-      export EDITOR="emacsclient -t"
-      export VISUAL="emacsclient -c -a emacs"
+      #export ALTERNATE_EDITOR=""
+      #export EDITOR="emacsclient -t"
+      #export VISUAL="emacsclient -c -a emacs"
 
-      e() {
-          emacsclient -t "$@"
-      }
+      #e() {
+       #   emacsclient -t "$@"
+      #}
 
       # nix shortcuts
       shell() {
