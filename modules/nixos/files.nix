@@ -95,9 +95,9 @@ let
       while ! systemctl is-active --quiet network-online.target; do sleep 1; done
       notify-send 'Network found.'
 
-      # Wait for the Emacs daemon
-      notify-send 'Starting Emacs...'
-      /run/current-system/sw/bin/emacsclient -a "" -e '(progn)' &
+      # # Wait for the Emacs daemon
+      # notify-send 'Starting Emacs...'
+      # /run/current-system/sw/bin/emacsclient -a "" -e '(progn)' &
 
       # Desktop 1
       # Email, Calendar, News, IDE
@@ -108,20 +108,20 @@ let
       bspc rule -a PHPStorm -o desktop='^1'
       /run/current-system/sw/bin/phpstorm &!
 
-      # Wait for Emacs daemon to be ready
-      while ! /run/current-system/sw/bin/emacsclient -e '(progn)' &>/dev/null; do
-      sleep 1
-      done
-      notify-send 'Emacs daemon started.'
+      # # Wait for Emacs daemon to be ready
+      # while ! /run/current-system/sw/bin/emacsclient -e '(progn)' &>/dev/null; do
+      # sleep 1
+      # done
+      # notify-send 'Emacs daemon started.'
 
       # Desktop 2
       # Terminal, Emacs (magit)
       bspc rule -a Alacritty -o desktop='^2'
       /etc/profiles/per-user/dustin/bin/alacritty -e sh -c 'tmux attach || tmux new-session' &
 
-      sleep 1
-      bspc rule -a Emacs -o desktop='^2'
-      /run/current-system/sw/bin/emacsclient -c &!
+      # sleep 1
+      # bspc rule -a Emacs -o desktop='^2'
+      # /run/current-system/sw/bin/emacsclient -c &!
 
       sleep .5
 
@@ -262,16 +262,16 @@ let
     super + shift + x
           /etc/profiles/per-user/${user}/bin/keepassxc
 
-    # Emacs
-    # -c flag is --create-frame
-    # -a flag is fallback to plain emacs if daemon fails
-    super + alt + Return
-         emacsclient -c -a emacs
-
-    super + alt + e
-         systemctl --user restart emacs.service && \
-         emacsclient -c -a emacs
-
+    # # Emacs
+    # # -c flag is --create-frame
+    # # -a flag is fallback to plain emacs if daemon fails
+    # super + alt + Return
+    #      emacsclient -c -a emacs
+    #
+    # super + alt + e
+    #      systemctl --user restart emacs.service && \
+    #      emacsclient -c -a emacs
+    #
     # Web browser
     ctrl + alt + Return
          google-chrome-stable

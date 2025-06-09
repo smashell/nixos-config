@@ -52,7 +52,7 @@ with pkgs; [
   tflint
 
   # Media-related packages
-  emacs-all-the-icons-fonts
+  # emacs-all-the-icons-fonts
   imagemagick
   dejavu_fonts
   ffmpeg

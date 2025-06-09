@@ -312,7 +312,7 @@ let user = "dustin";
 
   fonts.packages = with pkgs; [
     dejavu_fonts
-    emacs-all-the-icons-fonts
+    # emacs-all-the-icons-fonts
     feather-font # from overlay
     jetbrains-mono
     font-awesome
